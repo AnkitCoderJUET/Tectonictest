@@ -3,7 +3,8 @@ FROM node:20-slim
 RUN apt-get update && apt-get install -y curl
 
 # Install Tectonic
-RUN curl -fsSL https://drop-sh.fullyjustified.net | sh
+RUN curl -fsSL https://drop-sh.fullyjustified.net | sh \
+    && mv tectonic /usr/local/bin/
 
 WORKDIR /app
 
